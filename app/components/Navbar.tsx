@@ -106,12 +106,12 @@ const Navbar: FC = () => {
         <NavLinks />
       </div>
       <div className="md:hidden bg-black ">
-        <button className="z-30 fixed left-2 top-2" onClick={toggleNav}>
+        <button className="z-40 fixed left-2 top-2" onClick={toggleNav}>
           {isOpen ? <X /> : <Menu />}
         </button>
 
         <div
-          className={`bg-zinc-900 flex fixed flex-col justify-center items-center basis-full min-h-screen min-w-full z-20 font-bold transition-all duration-500 ease-in ${
+          className={`bg-zinc-900 flex fixed flex-col justify-center items-center basis-full min-h-screen min-w-full z-30 font-bold transition-all duration-500 ease-in ${
             isOpen ? "left-0" : "left-[-800px]"
           }`}
         >

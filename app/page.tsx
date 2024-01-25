@@ -17,7 +17,7 @@ export default function Home() {
     <div>
       <div className="object-cover lg:object-cover bgroad relative h-[110vh] w-[100%] flex justify-center items-center md:justify-normal md:items-start">
         <Image fill={true} src={ImageBackground} objectFit="cover" alt="/" />
-        <div className="relative w-[350px] h-[250px] bg-white/[0.6] md:w-[350px] md:h-[250px] md:top-[25%] md:left-[20%] shadow-xl flex justify-center items-center font-mono z-10">
+        <div className="relative w-[350px] h-[250px] bg-white/[0.6] md:w-[350px] md:h-[250px] md:top-[25%] md:left-[20%] shadow-xl flex justify-center items-center font-mono">
           <h1
             className={`font-extrabold text-black text-6xl ${inter.className}`}
           >

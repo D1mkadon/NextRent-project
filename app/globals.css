@@ -73,12 +73,12 @@ body {
 }
 
 .normalHeader {
-  height: 115px;
-  position: fixed;
+  height: 0;
+  position: relative;
   width: 100%;
   top: 0;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: transparent;
   backdrop-filter: blur(10px);
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -88,6 +88,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  @apply md:bg-black/[0.6] md:fixed md:h-[115px];
 }
 .scrolledHeader {
   height: 65px;
