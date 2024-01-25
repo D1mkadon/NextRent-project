@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -84,12 +84,11 @@ body {
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  z-index: 3;
-  display: flex;
+  z-index: 2;
   justify-content: center;
   align-items: center;
   @apply md:bg-black/[0.6] md:fixed md:h-[115px];
 }
 .scrolledHeader {
-  height: 65px;
+  @apply md:h-[65px];
 }

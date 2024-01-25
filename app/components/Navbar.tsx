@@ -97,21 +97,21 @@ const Navbar: FC = () => {
   };
 
   return (
-    <div
-      className={`flex-wrap text-center text-lg ${
-        scrolledHead ? "scrolledHeader normalHeader" : "normalHeader"
-      }`}
-    >
-      <div className="hidden md:flex h-20 w-full items-center justify-around p-4">
+    <div>
+      <div
+        className={`hidden flex-wrap text-center text-lg  md:flex h-20 w-full items-center justify-around px-4 ${
+          scrolledHead ? "scrolledHeader normalHeader" : "normalHeader"
+        }`}
+      >
         <NavLinks />
       </div>
-      <div className="md:hidden bg-black ">
+      <div className="flex md:hidden bg-black">
         <button className="z-40 fixed left-2 top-2" onClick={toggleNav}>
           {isOpen ? <X /> : <Menu />}
         </button>
 
         <div
-          className={`bg-zinc-900 flex fixed flex-col justify-center items-center basis-full min-h-screen min-w-full z-30 font-bold transition-all duration-500 ease-in ${
+          className={`fixed bg-zinc-900 flex  flex-col justify-center items-center basis-full min-h-screen min-w-full z-30 font-bold transition-all duration-500 ease-in ${
             isOpen ? "left-0" : "left-[-800px]"
           }`}
         >

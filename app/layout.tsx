@@ -3,6 +3,7 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { AuthContextProvider } from "./context/AuthContext";
+import Footer from "./components/Footer";
 
 export default function RootLayout({
   children,
@@ -20,7 +21,8 @@ export default function RootLayout({
             </AuthContextProvider>
           </div>
           <div className="flex-auto "></div>
-          <footer className="bg-sky-500 mt-6">Footer</footer>
+          <Footer/>
+          
         </div>
       </body>
     </html>

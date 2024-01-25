@@ -4,7 +4,7 @@ const DATA_URL = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars";
 
 export const getData = axios({
   url: `${DATA_URL}`,
-  params: { model: "r8" },
+  params: { limit: "15", year: "2012" },
   method: "GET",
   headers: {
     "X-RapidAPI-Key": "cd06eb80d5mshbf43b5d47983ad7p12ad66jsn77f209215168",
