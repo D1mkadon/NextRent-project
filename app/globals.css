@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,6 +18,9 @@ h1 {
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+.shd{
+  box-shadow: 0 20px 25px -5px hsla(0,0%,100%,.1), 0 8px 10px -6px hsla(0,0%,100%,.1);
 }
 body {
   min-height: 100%;
@@ -85,10 +89,14 @@ body {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   z-index: 2;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   @apply md:bg-black/[0.6] md:fixed md:h-[115px];
 }
 .scrolledHeader {
   @apply md:h-[65px];
+}
+.Container {
+  width: min(1160px, 100% - 4rem);
+  margin: 10vh auto;
 }

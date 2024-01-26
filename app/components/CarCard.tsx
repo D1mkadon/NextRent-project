@@ -15,9 +15,7 @@ interface CarCardProps {
 }
 const CarCard = ({ car }: CarCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  useEffect(() => {
-    console.log(isOpen);
-  }, [isOpen]);
+
   const {
     city_mpg,
     year,
@@ -46,10 +44,10 @@ const CarCard = ({ car }: CarCardProps) => {
       <div className="flex flex-col w-full justify-between text-grey">
         <Image
           src={generateCarImageUrl(car)}
-          alt=""
+          alt="/"
           width={250}
           height={150}
-          className="object-contain"
+          // style={{ objectFit: "contain" }}
         ></Image>
         <div className="group-hover:hidden flex justify-between">
           <div className="flex flex-col items-center w-[33%]">

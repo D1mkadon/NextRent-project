@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="w-full flex justify-center">
       <div className="mt-10 w-[90%] h-[30vh] border-t ">
-        <div className="flex justify-around w-[100%] px-[20%] top-10 relative">
+        <div className="flex text-center md:text-left md:justify-around w-[100%] px-[20%] top-10 relative flex-col justify-center gap-5 md:flex-row">
           <ul className="flex flex-col justify-start h-[100%] ">
             <Link
               className="text-gray-600/[0.9] hover:text-white transition-all duration-500 capitalize"

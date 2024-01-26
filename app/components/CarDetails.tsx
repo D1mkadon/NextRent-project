@@ -62,7 +62,7 @@ const CarDetails = ({ isOpen, onClose, car }: CarDetailsProps) => {
                         alt="car"
                         fill
                         priority
-                        className="object-contain"
+                        style={{ objectFit: "contain" }}
                       ></Image>
                     </div>
                     <div className="flex gap-3">
@@ -72,7 +72,7 @@ const CarDetails = ({ isOpen, onClose, car }: CarDetailsProps) => {
                           alt="car"
                           fill
                           priority
-                          className="object-contain"
+                          style={{ objectFit: "contain" }}
                         ></Image>
                       </div>
                       <div className="flex-1 relative w-full h-24 rounded-lg">
@@ -81,7 +81,7 @@ const CarDetails = ({ isOpen, onClose, car }: CarDetailsProps) => {
                           alt="car"
                           fill
                           priority
-                          className="object-contain"
+                          style={{ objectFit: "contain" }}
                         ></Image>
                       </div>
                       <div className="flex-1 relative w-full h-24 rounded-lg">
@@ -90,7 +90,7 @@ const CarDetails = ({ isOpen, onClose, car }: CarDetailsProps) => {
                           alt="car"
                           fill
                           priority
-                          className="object-contain"
+                          style={{ objectFit: "contain" }}
                         ></Image>
                       </div>
                     </div>

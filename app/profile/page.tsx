@@ -14,7 +14,7 @@ const page = () => {
     checkAuthentication();
   }, [user]);
   return (
-    <div className="p-4">
+    <div className="p-4 flex h-[100vh] justify-start items-center w-full Container">
       {loading ? (
         <p>Loading...</p>
       ) : user ? (

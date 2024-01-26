@@ -1,9 +1,11 @@
 {
   "cSpell.words": [
     "googleusercontent",
+    "headlessui",
     "imagin",
     "linka",
     "lucide",
     "tailwindcss"
-  ]
+  ],
+  "files.associations": { "*.css": "tailwindcss" }
 }
