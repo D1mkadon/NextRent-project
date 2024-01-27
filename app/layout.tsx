@@ -20,9 +20,8 @@ export default function RootLayout({
               {children}
             </AuthContextProvider>
           </div>
-          <div className="flex-auto "></div>
-          <Footer/>
-          
+
+          <Footer />
         </div>
       </body>
     </html>

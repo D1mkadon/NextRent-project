@@ -1,0 +1,41 @@
+{
+  "id": "what_we_have",
+  "type": "SharedSlice",
+  "name": "WhatWeHave",
+  "description": "WhatWeHave",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "car_name": {
+          "type": "Text",
+          "config": {
+            "label": "Car name",
+            "placeholder": ""
+          }
+        },
+        "color": {
+          "type": "Color",
+          "config": {
+            "label": "Color",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

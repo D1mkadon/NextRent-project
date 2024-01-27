@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "search",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"car_name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "consonant",
+							"type": "Text"
+						}
+					],
+					[
+						"color",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "#a98b50",
+							"type": "Color"
+						}
+					]
+				]
+			}
+		]
+	}
+]

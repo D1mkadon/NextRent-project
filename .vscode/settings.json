@@ -1,10 +1,13 @@
 {
   "cSpell.words": [
     "googleusercontent",
+    "gsap",
     "headlessui",
     "imagin",
     "linka",
     "lucide",
+    "Prismic",
+    "prismicio",
     "tailwindcss"
   ],
   "files.associations": { "*.css": "tailwindcss" }
