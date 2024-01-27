@@ -27,7 +27,7 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 };
 
 export const calculateCarPrice = (properties: carProps): number => {
-  let basePrice: number = 10000;
+  let basePrice: number = 5000;
   let price: number =
     basePrice +
     properties.city_mpg * 10 +

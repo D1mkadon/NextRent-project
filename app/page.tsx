@@ -6,8 +6,10 @@ import ferrari from "./images/auto1.png";
 import Image from "next/image";
 import ImageBackground from "./images/test5.png";
 import { Dancing_Script } from "next/font/google";
-import Slider from "./components/Slider";
-import {SliderData} from './components/SliderData'
+import { SliderData } from "./components/SliderData";
+import SecondSlider from "./components/SecondSlider";
+import sliderBackground from "./images/modern-empty-room.jpg";
+
 const inter = Dancing_Script({ subsets: ["latin"] });
 export default function Home() {
   const [cars, setCars] = useState([]);
@@ -36,12 +38,22 @@ export default function Home() {
           <Image fill={true} src={ferrari} alt="/" />
         </div>
       </div>
-      <Slider slides={SliderData}/>
+      <div className="flex justify-center mt-10">
+        <div className="absolute h-[500px] w-screen xl:w-[1280px] flex justify-center items-end p-4 shd overflow-hidden rounded">
+          <Image
+            src={sliderBackground}
+            fill={true}
+            alt="/"
+            objectFit="cover"
+            className="z-0 scale-[1.3] md:object-cover object-contain"
+          />
+        </div>
+        <SecondSlider />
+      </div>
+
       <div className="Container mt-7 flex-auto">
         <div className="flex flex-wrap items-start justify-center">
-          {cars?.map((car, index) => (
-            <CarCard key={index} car={car} />
-          ))}
+          {cars?.map((car, index) => <CarCard key={index} car={car} />)}
         </div>
       </div>
     </div>

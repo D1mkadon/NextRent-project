@@ -7,7 +7,7 @@ import {
 } from "@/utils";
 import Image from "next/image";
 import CardDetails from "./CarDetails";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CustomButton from "./CustomButton";
 import { Cylinder, Fuel, LifeBuoy } from "lucide-react";
 interface CarCardProps {
@@ -38,8 +38,9 @@ const CarCard = ({ car }: CarCardProps) => {
       </h2>
       <h3 className="capitalize"></h3>
       <p className="flex  text-[32px] font-extrabold self-start">
-        {carPrice}
         <span className="self-start text-[14px] font-semibold">$</span>
+        {carPrice}
+        <span className="self-end text-[14px] font-semibold">/day</span>
       </p>
       <div className="flex flex-col w-full justify-between text-grey">
         <Image
@@ -47,7 +48,6 @@ const CarCard = ({ car }: CarCardProps) => {
           alt="/"
           width={250}
           height={150}
-          // style={{ objectFit: "contain" }}
         ></Image>
         <div className="group-hover:hidden flex justify-between">
           <div className="flex flex-col items-center w-[33%]">
