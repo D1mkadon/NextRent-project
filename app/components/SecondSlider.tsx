@@ -9,9 +9,10 @@ const SecondSlider = () => {
       showArrows={true}
       centerMode={true}
       centerSlidePercentage={100}
-      autoPlay
+      autoPlay={true}
       className="xl:w-[1280px] w-screen"
       infiniteLoop
+      interval={3000}
       showStatus={false}
       showThumbs={false}
       swipeable={true}
