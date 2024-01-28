@@ -4,25 +4,19 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import InfoCard from "./InfoCard";
 import { InfoCardData } from "./InfoCardData";
+import InfoCardSection from "./InfoCardSection";
+
+
+
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("about");
 
+ 
   return (
     <div className="w-full min-h-[100vh] flex mt-[20%] flex-col">
       <SliceZone slices={page.data.slices} components={components} />
-      <div className="flex gap-6 justify-center items-center min-h-[60vh] flex-wrap">
-        {InfoCardData?.map((info, index) => (
-          <InfoCard
-            key={index}
-            background={info.background}
-            description={info.description}
-            image={info.image}
-            name={info.name}
-            position={info.position}
-          />
-        ))}
-      </div>
+     <InfoCardSection/>
     </div>
   );
 }

@@ -43,27 +43,38 @@ const Navbar: FC = () => {
     };
     window.addEventListener("scroll", handleShadow);
   }, []);
-  const NavLinks = () => {
+
+  const NavLinks = ({ click }: any) => {
     return (
       <>
-        <ul className="flex-col md:flex md:flex-row ">
+        <ul className="flex-col md:flex md:flex-row text-center">
           <li className="p-2 cursor-pointer linka">
-            <Link href="/">Home</Link>
+            <Link onClick={click} href="/">
+              Home
+            </Link>
           </li>
           <li className="p-2 cursor-pointer linka">
-            <Link href="/about">About</Link>
+            <Link onClick={click} href="/about">
+              About
+            </Link>
           </li>
           {!user ? null : (
             <li className="p-2 cursor-pointer linka">
-              <Link href="/profile">Profile</Link>
+              <Link onClick={click} href="/profile">
+                Profile
+              </Link>
             </li>
           )}
 
           <li className="p-2 cursor-pointer linka">
-            <Link href="/blog">Blog</Link>
+            <Link onClick={click} href="/blog">
+              Blog
+            </Link>
           </li>
           <li className="p-2 cursor-pointer linka">
-            <Link href="/docs">Docs</Link>
+            <Link onClick={click} href="/docs">
+              Docs
+            </Link>
           </li>
         </ul>
         {loading ? null : !user ? (
@@ -115,7 +126,7 @@ const Navbar: FC = () => {
             isOpen ? "left-0" : "left-[-800px]"
           }`}
         >
-          <NavLinks />
+          <NavLinks click={toggleNav} />
         </div>
       </div>
     </div>

@@ -1,13 +1,14 @@
 "use client";
 import { InfoProps } from "@/types/types";
 import { Roboto } from "next/font/google";
+
 const inter = Roboto({
   weight: "400",
   subsets: ["latin"],
 });
 const InfoCard = (info: InfoProps): JSX.Element => {
   return (
-    <div className="max-w-[315px] bg-[#111111] pb-4 min-h-[465px]">
+    <div className="max-w-[315px] bg-[#111111] pb-4 min-h-[465px] infoCard">
       <img src={info.background} alt="" />
       <figcaption className="w-full bg-[#111111] p-[25px] relative before:content-[''] before:absolute before:bottom-[100%] before:left-0 before:w-0 before:h-0 before:border-solid before:border-t-[55px] bfr before:border-l-[#111111] before:border-y-transparent before:border-r-transparent before:overflow-hidden">
         <img

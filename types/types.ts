@@ -27,4 +27,5 @@ export interface InfoProps {
   image: string;
   name: string;
   position: string;
+
 }

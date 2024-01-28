@@ -45,7 +45,7 @@ export default function Home() {
             src={sliderBackground}
             fill={true}
             alt="/"
-            objectFit="cover"
+            style={{ objectFit: "cover" }}
             className="z-0 scale-[1.3] md:object-cover object-contain"
           />
         </div>

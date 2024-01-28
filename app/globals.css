@@ -107,7 +107,7 @@ body {
   margin: 10vh auto;
 }
 .car-row {
-  @apply text-gray-600 mb-8 flex items-center justify-center gap-4 text-8xl uppercase;
+  @apply text-gray-600 mb-8 flex items-center justify-center gap-4 md:text-8xl text-6xl uppercase box-content object-scale-down;
 }
 .carIcon {
   @apply text-3xl;
@@ -116,8 +116,6 @@ body {
 .aboutTitle {
   @apply text-8xl md:my-12 md:mx-6 p-7 capitalize;
 }
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
-
 .bfr::before {
   border-left-width: 315px;
 }
