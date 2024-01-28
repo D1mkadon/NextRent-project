@@ -67,8 +67,8 @@ const Navbar: FC = () => {
           )}
 
           <li className="p-2 cursor-pointer linka">
-            <Link onClick={click} href="/blog">
-              Blog
+            <Link onClick={click} href="/work">
+              Work
             </Link>
           </li>
           <li className="p-2 cursor-pointer linka">

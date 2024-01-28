@@ -27,5 +27,9 @@ export interface InfoProps {
   image: string;
   name: string;
   position: string;
-
+}
+export interface WorkBoxProps {
+  text: string;
+  Icon?: JSX.Element;
+  Description: string;
 }
