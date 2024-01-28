@@ -21,3 +21,10 @@ export interface CustomButtonProps {
   rightIcon?: string;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
 }
+export interface InfoProps {
+  background: string;
+  description: string;
+  image: string;
+  name: string;
+  position: string;
+}

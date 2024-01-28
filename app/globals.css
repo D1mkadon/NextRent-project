@@ -116,3 +116,13 @@ body {
 .aboutTitle {
   @apply text-8xl md:my-12 md:mx-6 p-7 capitalize;
 }
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
+
+.bfr::before {
+  border-left-width: 315px;
+}
+@media (max-width: 320px) {
+  .bfr::before {
+    border-left-width: 100vw;
+  }
+}

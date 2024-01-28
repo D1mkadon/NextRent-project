@@ -20,7 +20,6 @@ export default function RootLayout({
               {children}
             </AuthContextProvider>
           </div>
-
           <Footer />
         </div>
       </body>

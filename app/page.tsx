@@ -38,6 +38,7 @@ export default function Home() {
           <Image fill={true} src={ferrari} alt="/" />
         </div>
       </div>
+      <h2 className="text-center mt-6 text-4xl font-bold">Gallery</h2>
       <div className="flex justify-center mt-10">
         <div className="absolute h-[500px] w-screen xl:w-[1280px] flex justify-center items-end p-4 shd overflow-hidden rounded">
           <Image
