@@ -4,7 +4,10 @@ import WorkBox from "./WorkBox";
 import { WorkBoxData } from "./WorkBoxData";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import SocialSection from "./SocialSection";
+import { ScrollTrigger } from "gsap/all";
 
+gsap.registerPlugin(ScrollTrigger);
 const WorkWithUs = () => {
   const sectionRef = useRef(null);
   useGSAP(
@@ -26,16 +29,16 @@ const WorkWithUs = () => {
   useGSAP(() => {
     gsap.from(".getToKnow", {
       scrollTrigger: {
-        trigger: ".workBox",
+        trigger: ".getToKnow",
         start: "top 80%",
       },
       y: 120,
       duration: 0.7,
       ease: "power1.inOut",
       yoyo: true,
-      stagger: { each: 0.2 },
     });
-  });
+  }, {});
+
   return (
     <div className="min-h-[100vh] mt-[20%]">
       <div className="Container">
@@ -52,6 +55,7 @@ const WorkWithUs = () => {
             />
           ))}
         </div>
+        <SocialSection />
       </div>
     </div>
   );
