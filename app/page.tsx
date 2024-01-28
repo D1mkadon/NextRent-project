@@ -34,7 +34,7 @@ export default function Home() {
             Rent Car
           </h1>
         </div>
-        <div className="hidden lg:flex absolute top-[40%] right-0 md:right-2 md:top-[30%] object-cover w-[450px] h-[250px] md:h-[450px] md:w-[950px]">
+        <div className="hidden lg:flex absolute top-[40%] right-0 md:right-2 md:top-[30%] object-cover w-[450px] h-[250px] md:h-[450px] md:w-[950px] 2xl:w-[1400px] 2xl:h-[650px]">
           <Image fill={true} src={ferrari} alt="/" />
         </div>
       </div>
