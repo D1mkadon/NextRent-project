@@ -113,3 +113,6 @@ body {
     border-left-width: 100vw;
   }
 }
+.SocialsAnimation:hover {
+  @apply text-blue-500 duration-200 ease-in-out;
+}

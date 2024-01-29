@@ -33,7 +33,7 @@ const SocialBox = (): JSX.Element => {
         href="https://github.com/D1mkadon"
         target="_blanked"
       >
-        <Github width={50} height={50} color="#fff" />
+        <Github width={50} height={50} />
       </Link>
 
       <Link
@@ -41,35 +41,35 @@ const SocialBox = (): JSX.Element => {
         href={"https://www.linkedin.com/in/dmytro-tarasenko/"}
         target="_blanked"
       >
-        <Linkedin width={50} height={50} color="#fff" />
+        <Linkedin width={50} height={50} />
       </Link>
       <Link
         className="SocialsAnimation"
         href={"https://www.instagram.com/"}
         target="_blanked"
       >
-        <Instagram width={50} height={50} color="#fff" />
+        <Instagram width={50} height={50} />
       </Link>
       <Link
         className="SocialsAnimation"
         href={"https://www.facebook.com/"}
         target="_blanked"
       >
-        <Facebook width={50} height={50} color="#fff" />
+        <Facebook width={50} height={50} />
       </Link>
       <Link
         className="SocialsAnimation"
         href={"https://www.youtube.com/"}
         target="_blanked"
       >
-        <Youtube width={50} height={50} color="#fff" />
+        <Youtube width={50} height={50} />
       </Link>
       <Link
         className="SocialsAnimation"
         href={"https://twitter.com/"}
         target="_blanked"
       >
-        <Twitter width={50} height={50} color="#fff" />
+        <Twitter width={50} height={50} />
       </Link>
     </div>
   );

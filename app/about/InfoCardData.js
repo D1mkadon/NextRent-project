@@ -6,7 +6,7 @@ export const InfoCardData = [
       'If you want to stay dad you\'ve got to polish your image. I think the image we need to create for you is "repentant but learning".',
     background:
       "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
-    position: "Director",
+    position: "SEO",
   },
   {
     name: "Mark Zuckerberg",

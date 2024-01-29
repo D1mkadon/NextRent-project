@@ -31,7 +31,7 @@ const CarCard = ({ car }: CarCardProps) => {
   const carRent = calculateCarRent(city_mpg, year);
   const carPrice: number = calculateCarPrice(car);
   return (
-    <div className="flex m-2 flex-col items-center p-2 w-64 h-80 bg-white/[.02] font-mono group">
+    <div className="flex m-2 flex-col items-center p-2 w-64 h-80 bg-white/[.02] font-mono group carAnimate">
       <h2 className="capitalize font-semibold">
         {make}
         {model}

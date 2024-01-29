@@ -6,6 +6,7 @@ import React, { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,6 +46,22 @@ const WhatWeHave = ({ slice }: WhatWeHaveProps): JSX.Element => {
     }, component);
     return () => ctx.revert();
   }, []);
+  useGSAP(
+    () => {
+      gsap.from(".aboutTitle", {
+        scrollTrigger: {
+          trigger: ".aboutTitle",
+          start: "top 80%",
+        },
+        y: -120,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power1.inOut",
+        yoyo: true,
+      });
+    },
+    { scope: component }
+  );
   return (
     <div className="overflow-hidden max-w-[100vh]">
       <section
