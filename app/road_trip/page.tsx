@@ -51,11 +51,11 @@ const page = () => {
           className="MainImage"
           fill={true}
           src={ImageBackground}
-          priority
+          priority={true}
           style={{ objectFit: "cover" }}
           alt="/"
         />
-        <div className="MainTitle relative w-[30%] flex-col flex md:top-[25%] md:left-[20%] shadow-xl justify-center items-center font-mono">
+        <div className="MainTitle relative w-[80%] md:w-[30%] flex-col flex md:top-[25%] md:left-[20%] shadow-xl justify-center items-center font-mono">
           <h2 className={`font-extrabold text-white text-6xl p-2 `}>
             Off for an adventure.
           </h2>
@@ -66,9 +66,10 @@ const page = () => {
             tracks.
           </p>
         </div>
-        <div className="relative">relative</div>
       </div>
-      <h2 className="text-8xl font-bold"></h2>
+      <div className="h-[100vh] Container">
+        <h2 className="text-8xl font-bold">Title</h2>
+      </div>
     </div>
   );
 };
