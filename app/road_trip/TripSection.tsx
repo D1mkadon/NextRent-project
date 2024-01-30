@@ -48,7 +48,7 @@ const TripSection = () => {
       <h2 className="text-4xl md:text-8xl p-6 my-6 overflow-hidden getToKnow">
         Everything you need
       </h2>
-      <div ref={el} className="w-full flex flex-col gap-6 ">
+      <div ref={el} className="w-full flex flex-col gap-10 md:gap-6 ">
         {roadData?.map((info, index) => (
           <TripCard
             key={index}
