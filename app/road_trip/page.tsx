@@ -20,6 +20,19 @@ const page = () => {
       ease: "power1.inOut",
       yoyo: true,
     });
+    gsap.from(".MainTitle", {
+      scrollTrigger: {
+        trigger: ".MainTitle",
+        start: "-100% 100%",
+      },
+
+      y: 100,
+      opacity: 0,
+      delay: 1,
+      duration: 0.4,
+      ease: "power1.inOut",
+      yoyo: true,
+    });
   }, {});
   return (
     <div className="min-h-[100vh]">

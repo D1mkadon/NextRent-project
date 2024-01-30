@@ -20,7 +20,6 @@ const TripSection = () => {
             trigger: s,
             start: "top center",
             end: "bottom top",
-            // markers: true,
           },
           y: 100,
           opacity: 0,
