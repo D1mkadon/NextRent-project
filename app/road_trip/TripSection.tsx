@@ -31,12 +31,24 @@ const TripSection = () => {
     },
     { scope: el }
   );
+  useGSAP(() => {
+    gsap.from(".getToKnow", {
+      scrollTrigger: {
+        trigger: ".getToKnow",
+        start: "top 100%",
+      },
+      y: 120,
+      duration: 0.5,
+      ease: "power1.inOut",
+      yoyo: true,
+    });
+  }, {});
   return (
-    <div className="min-h-[100vh] Container">
-      <h2 className="text-4xl md:text-8xl p-6 my-6 overflow-hidden">
+    <div className="min-h-[100vh] my-10">
+      <h2 className="text-4xl md:text-8xl p-6 my-6 overflow-hidden getToKnow">
         Everything you need
       </h2>
-      <div ref={el} className="w-full flex flex-col gap-6 TripBlock">
+      <div ref={el} className="w-full flex flex-col gap-6 ">
         {roadData?.map((info, index) => (
           <TripCard
             key={index}

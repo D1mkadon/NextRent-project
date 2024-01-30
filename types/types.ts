@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { MouseEventHandler } from "react";
 
 export interface carProps {
@@ -36,6 +37,6 @@ export interface WorkBoxProps {
 export interface RoadProps {
   title: string;
   description: string;
-  image?: string;
+  image: StaticImageData;
   position?: string;
 }
