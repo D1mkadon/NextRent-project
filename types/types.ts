@@ -33,3 +33,9 @@ export interface WorkBoxProps {
   Icon?: JSX.Element;
   Description: string;
 }
+export interface RoadProps {
+  title: string;
+  description: string;
+  image?: string;
+  position?: string;
+}

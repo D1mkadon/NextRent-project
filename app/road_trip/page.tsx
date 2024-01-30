@@ -4,6 +4,7 @@ import ImageBackground from "../images/tripBack.jpg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import TripSection from "./TripSection";
 gsap.registerPlugin(ScrollTrigger);
 const page = () => {
   useGSAP(() => {
@@ -19,30 +20,6 @@ const page = () => {
       ease: "power1.inOut",
       yoyo: true,
     });
-    gsap.from(".MainTitle", {
-      scrollTrigger: {
-        trigger: ".MainTitle",
-        start: "top 80%",
-      },
-      y: 100,
-      opacity: 0,
-      duration: 0.7,
-      ease: "power1.inOut",
-      yoyo: true,
-      delay: 0.6,
-    });
-    gsap.from(".MainCar", {
-      scrollTrigger: {
-        trigger: ".MainCar",
-        start: "top 80%",
-      },
-      x: 100,
-      opacity: 0,
-      duration: 0.7,
-      ease: "power1.inOut",
-      yoyo: true,
-      delay: 0.6,
-    });
   }, {});
   return (
     <div className="min-h-[100vh]">
@@ -56,7 +33,7 @@ const page = () => {
           alt="/"
         />
         <div className="MainTitle relative w-[80%] md:w-[30%] flex-col flex md:top-[25%] md:left-[20%] shadow-xl justify-center items-center font-mono">
-          <h2 className={`font-extrabold text-white text-6xl p-2 `}>
+          <h2 className={`font-extrabold md:text-6xl text-white text-4xl p-2 `}>
             Off for an adventure.
           </h2>
           <p>
@@ -67,9 +44,8 @@ const page = () => {
           </p>
         </div>
       </div>
-      <div className="h-[100vh] Container">
-        <h2 className="text-8xl font-bold">Title</h2>
-      </div>
+
+      <TripSection />
     </div>
   );
 };

@@ -12,44 +12,47 @@ const inter = Dancing_Script({ subsets: ["latin"] });
 
 const HomePageFirstSection = () => {
   const mainScope = useRef(null);
-  useGSAP(() => {
-    gsap.from(".MainImage", {
-      scrollTrigger: {
-        trigger: ".MainTitle",
-        start: "top 80%",
-      },
+  useGSAP(
+    () => {
+      gsap.from(".MainImage", {
+        scrollTrigger: {
+          trigger: ".MainTitle",
+          start: "top 80%",
+        },
 
-      scale: 0,
-      opacity: 0,
-      duration: 0.4,
-      ease: "power1.inOut",
-      yoyo: true,
-    });
-    gsap.from(".MainTitle", {
-      scrollTrigger: {
-        trigger: ".MainTitle",
-        start: "top 80%",
-      },
-      x: -100,
-      opacity: 0,
-      duration: 0.7,
-      ease: "power1.inOut",
-      yoyo: true,
-      delay: 0.6,
-    });
-    gsap.from(".MainCar", {
-      scrollTrigger: {
-        trigger: ".MainCar",
-        start: "top 80%",
-      },
-      x: 100,
-      opacity: 0,
-      duration: 0.7,
-      ease: "power1.inOut",
-      yoyo: true,
-      delay: 0.6,
-    });
-  }, {});
+        scale: 0,
+        opacity: 0,
+        duration: 0.4,
+        ease: "power1.inOut",
+        yoyo: true,
+      });
+      gsap.from(".MainTitle", {
+        scrollTrigger: {
+          trigger: ".MainTitle",
+          start: "top 80%",
+        },
+        x: -100,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power1.inOut",
+        yoyo: true,
+        delay: 0.6,
+      });
+      gsap.from(".MainCar", {
+        scrollTrigger: {
+          trigger: ".MainCar",
+          start: "top 80%",
+        },
+        x: 100,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power1.inOut",
+        yoyo: true,
+        delay: 0.6,
+      });
+    },
+    { scope: mainScope }
+  );
   return (
     <div
       ref={mainScope}
@@ -63,7 +66,7 @@ const HomePageFirstSection = () => {
         style={{ objectFit: "cover" }}
         alt="/"
       />
-      <div className="MainTitle relative w-[350px] h-[250px] bg-white/[0.6] md:w-[350px] md:h-[250px] md:top-[25%] md:left-[20%] shadow-xl flex justify-center items-center font-mono">
+      <div className="MainTitle relative w-[350px] h-[250px] bg-white/[0.6] md:w-[350px] md:h-[250px] md:top-[25%] md:left-[20%] shadow-xl flex justify-center items-center font-mono z-[2]">
         <h1
           className={`font-extrabold text-black text-6xl  ${inter.className}`}
         >
