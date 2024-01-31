@@ -5,7 +5,7 @@ import { AccountProps } from "@/types/types";
 
 const AccountBlock = ({ photoURL, displayName, email }: AccountProps) => {
   return (
-    <div className="w-full gap-6 flex flex-col items-center">
+    <div className="w-full gap-6 flex flex-col items-center profileAnimations">
       <h2 className="text-4xl md:text-6xl py-6 getToKnow">My Profile</h2>
       <div className="flex items-center gap-6">
         <Image
