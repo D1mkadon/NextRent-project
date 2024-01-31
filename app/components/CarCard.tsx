@@ -44,10 +44,11 @@ const CarCard = ({ car }: CarCardProps) => {
       </p>
       <div className="flex flex-col w-full justify-between text-grey">
         <Image
+          className="w-auto h-auto"
           src={generateCarImageUrl(car)}
           alt="/"
-          width={250}
-          height={150}
+          width={320}
+          height={200}
         ></Image>
         <div className="group-hover:hidden flex justify-between">
           <div className="flex flex-col items-center w-[33%]">

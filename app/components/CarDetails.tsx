@@ -62,6 +62,7 @@ const CarDetails = ({ isOpen, onClose, car }: CarDetailsProps) => {
                         alt="car"
                         fill
                         priority
+                        sizes="100%"
                         style={{ objectFit: "contain" }}
                       ></Image>
                     </div>
@@ -72,6 +73,7 @@ const CarDetails = ({ isOpen, onClose, car }: CarDetailsProps) => {
                           alt="car"
                           fill
                           priority
+                          sizes="100%"
                           style={{ objectFit: "contain" }}
                         ></Image>
                       </div>
@@ -81,6 +83,7 @@ const CarDetails = ({ isOpen, onClose, car }: CarDetailsProps) => {
                           alt="car"
                           fill
                           priority
+                          sizes="100%"
                           style={{ objectFit: "contain" }}
                         ></Image>
                       </div>
@@ -90,6 +93,7 @@ const CarDetails = ({ isOpen, onClose, car }: CarDetailsProps) => {
                           alt="car"
                           fill
                           priority
+                          sizes="100%"
                           style={{ objectFit: "contain" }}
                         ></Image>
                       </div>

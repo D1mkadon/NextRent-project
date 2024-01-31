@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { UserAuth } from "../context/AuthContext";
-import Image from "next/image";
 
+import SupportBlock from "./SupportBlock";
+import AccountBlock from "./AccountBlock";
 const page = () => {
   const [loading, setLoading] = useState(true);
   const { user } = UserAuth();
@@ -14,13 +15,20 @@ const page = () => {
     checkAuthentication();
   }, [user]);
   return (
-    <div className="p-4 flex h-[100vh] justify-start items-center w-full Container">
+    <div className="p-4 flex h-[100vh] justify-start items-start w-full Container">
       {loading ? (
         <p>Loading...</p>
       ) : user ? (
-        <div>
-          <Image src={user?.photoURL} alt="/" width={50} height={50}></Image>
-          <p>Welcome {user.displayName}</p>
+        <div className="w-full h-full PageStyles">
+          <AccountBlock
+            photoURL={user.photoURL}
+            displayName={user.displayName}
+            email={user.email}
+          />
+          <div className="flex justify-center items-center">
+            Here is user info{" "}
+          </div>
+          <SupportBlock />
         </div>
       ) : (
         <p>You must be logged in to view this page</p>

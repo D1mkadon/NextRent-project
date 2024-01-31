@@ -93,7 +93,7 @@ body {
 }
 .Container {
   width: min(1160px, 100% - 4rem);
-  margin: 10vh auto;
+  margin: 20vh auto;
 }
 .car-row {
   @apply text-gray-600 mb-8 flex items-center justify-center gap-4 md:text-8xl text-6xl uppercase box-content object-scale-down;
@@ -120,4 +120,18 @@ body {
 }
 .SocialsAnimation:hover {
   @apply text-blue-500 duration-200 ease-in-out;
+}
+.MainCar {
+  @apply md:h-[450px] md:w-[950px];
+}
+@media (min-width: 2060px) {
+  .MainCar {
+    width: 1280px;
+    height: 650px;
+  }
+}
+.PageStyles {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
 }

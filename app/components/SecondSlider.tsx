@@ -28,6 +28,7 @@ const SecondSlider = () => {
               src={car.image}
               alt=""
               fill
+              sizes="(min-width: 1080px) 992px, calc(95.26vw - 18px)"
               style={{ objectFit: "contain" }}
               className="p-4"
             ></Image>

@@ -19,14 +19,14 @@ export default function Home() {
       <HomePageFirstSection />
       {/* 2nd section  */}
       <h2 className="text-center mt-6 text-4xl font-bold">Gallery</h2>
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-10 h-[650px]">
         <div className="absolute h-[500px] w-screen xl:w-[1280px] flex justify-center items-end p-4 shd overflow-hidden rounded">
           <Image
             src={sliderBackground}
             fill={true}
             alt="/"
-            style={{ objectFit: "cover" }}
-            className="z-0 scale-[1.3] md:object-cover object-contain"
+            // sizes="(min-width: 1360px) 1280px, calc(94.23vw + 17px)"
+            className="z-0 scale-[1.3] md:object-cover object-cover"
           />
         </div>
         <SecondSlider />

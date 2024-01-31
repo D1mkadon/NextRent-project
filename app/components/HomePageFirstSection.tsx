@@ -17,10 +17,10 @@ const HomePageFirstSection = () => {
       gsap.from(".MainImage", {
         scrollTrigger: {
           trigger: ".MainTitle",
-          start: "top 80%",
+          start: "-100% 100%",
         },
 
-        scale: 0,
+        y: 1000,
         opacity: 0,
         duration: 0.4,
         ease: "power1.inOut",
@@ -62,7 +62,8 @@ const HomePageFirstSection = () => {
         className="MainImage"
         fill={true}
         src={ImageBackground}
-        priority
+        priority={true}
+        sizes="100vw"
         style={{ objectFit: "cover" }}
         alt="/"
       />
@@ -73,8 +74,15 @@ const HomePageFirstSection = () => {
           Rent Car
         </h1>
       </div>
-      <div className="MainCar hidden lg:flex absolute top-[40%] right-0 md:right-2 md:top-[30%] object-cover w-[450px] h-[250px] md:h-[450px] md:w-[950px]">
-        <Image fill={true} src={car} alt="/" />
+
+      <div className="MainCar hidden lg:flex absolute top-[40%] right-0 md:right-2 md:top-[30%] object-cover w-[450px] h-[250px] ">
+        <Image
+          fill={true}
+          src={car}
+          priority
+          alt="/"
+          sizes="(min-width: 2060px) 1280px, 950px"
+        />
       </div>
     </div>
   );

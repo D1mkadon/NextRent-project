@@ -40,3 +40,8 @@ export interface RoadProps {
   image: StaticImageData;
   position?: string;
 }
+export interface AccountProps {
+  displayName: string;
+  photoURL?: string;
+  email: string;
+}
