@@ -1,5 +1,5 @@
 "use client";
-import { getData } from "../utils/index";
+
 import { useEffect, useRef, useState } from "react";
 import CarCard from "./components/CarCard";
 import Image from "next/image";
@@ -7,13 +7,45 @@ import SecondSlider from "./components/SecondSlider";
 import sliderBackground from "./images/modern-empty-room.jpg";
 import _ScrollTrigger from "gsap/ScrollTrigger";
 import HomePageFirstSection from "./components/HomePageFirstSection";
+import SearchBar from "./components/SearchBar";
+import { FilterProps } from "@/types/types";
+import axios from "axios";
 
-export default function Home() {
+export default function Home({ searchParams }: any) {
   const [cars, setCars] = useState([]);
-  useEffect(() => {
-    getData.then((res) => setCars(res.data)).catch((err) => console.log(err));
-  }, []);
 
+  useEffect(() => {
+    const getData = ({
+      manufacturer,
+      year,
+      model,
+      fuel,
+      limit,
+    }: FilterProps) => {
+      axios({
+        url: `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+        params: { limit: "15", year: "2012" },
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "cd06eb80d5mshbf43b5d47983ad7p12ad66jsn77f209215168",
+          "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
+        },
+      })
+        .then((res) => {
+          setCars(res.data);
+        })
+        .catch((err) => console.log(err));
+    };
+
+    getData({
+      manufacturer: searchParams.manufacturer || "",
+      year: searchParams.year || 2022,
+      fuel: searchParams.fuel || "",
+      limit: searchParams.limit || 10,
+      model: searchParams.model || "",
+    });
+  }, [searchParams]);
   return (
     <div>
       <HomePageFirstSection />
@@ -32,7 +64,8 @@ export default function Home() {
         <SecondSlider />
       </div>
       {/* 3rd section  */}
-      <div className="Container mt-7 flex-auto">
+      <div className="Container mt-7 flex-auto flex flex-col justify-center items-center gap-6">
+        <SearchBar />
         <div className="flex flex-wrap items-start justify-center">
           {cars?.map((car, index) => <CarCard key={index} car={car} />)}
         </div>

@@ -1,16 +1,8 @@
-import { carProps } from "@/types/types";
+import { FilterProps, carProps } from "@/types/types";
 import axios from "axios";
 const DATA_URL = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars";
 
-export const getData = axios({
-  url: `${DATA_URL}`,
-  params: { limit: "15", year: "2012" },
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "cd06eb80d5mshbf43b5d47983ad7p12ad66jsn77f209215168",
-    "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
-  },
-});
+
 export const calculateCarRent = (city_mpg: number, year: number) => {
   const basePricePerDay = 50; // Base rental price per day in dollars
   const mileageFactor = 0.1; // Additional rate per mile driven
