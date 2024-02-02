@@ -56,3 +56,6 @@ export interface FilterProps {
   limit: number;
   model: string;
 }
+export interface HomeProps {
+  searchParams: FilterProps;
+}

@@ -4,7 +4,7 @@ import { Combobox, Transition } from "@headlessui/react";
 import { Car } from "lucide-react";
 import { useState, Fragment } from "react";
 import { manufacturers } from "@/constants";
-import { Check } from "lucide-react";
+
 const SearchManufacturer = ({
   manufacturer,
   setManufacturer,

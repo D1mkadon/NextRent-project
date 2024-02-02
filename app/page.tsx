@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect,  useState } from "react";
 import CarCard from "./components/CarCard";
 import Image from "next/image";
 import SecondSlider from "./components/SecondSlider";
@@ -8,10 +8,10 @@ import sliderBackground from "./images/modern-empty-room.jpg";
 import _ScrollTrigger from "gsap/ScrollTrigger";
 import HomePageFirstSection from "./components/HomePageFirstSection";
 import SearchBar from "./components/SearchBar";
-import { FilterProps } from "@/types/types";
+import { FilterProps, HomeProps } from "@/types/types";
 import axios from "axios";
 
-export default function Home({ searchParams }: any) {
+export default function Home({ searchParams }: HomeProps) {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
@@ -34,6 +34,7 @@ export default function Home({ searchParams }: any) {
       })
         .then((res) => {
           setCars(res.data);
+          console.log(res.data);
         })
         .catch((err) => console.log(err));
     };
