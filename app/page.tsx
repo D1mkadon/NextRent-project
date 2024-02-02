@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect,  useState } from "react";
+import { useEffect, useState } from "react";
 import CarCard from "./components/CarCard";
 import Image from "next/image";
 import SecondSlider from "./components/SecondSlider";
@@ -24,11 +24,11 @@ export default function Home({ searchParams }: HomeProps) {
     }: FilterProps) => {
       axios({
         url: `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
-        params: { limit: "15", year: "2012" },
+
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
-            "cd06eb80d5mshbf43b5d47983ad7p12ad66jsn77f209215168",
+            "85624eb103msha1055faed589f15p18e942jsndd4a4cf7090d",
           "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
         },
       })
@@ -41,9 +41,9 @@ export default function Home({ searchParams }: HomeProps) {
 
     getData({
       manufacturer: searchParams.manufacturer || "",
-      year: searchParams.year || 2022,
+      year: searchParams.year || 2012,
       fuel: searchParams.fuel || "",
-      limit: searchParams.limit || 10,
+      limit: searchParams.limit || 15,
       model: searchParams.model || "",
     });
   }, [searchParams]);
