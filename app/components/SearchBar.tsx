@@ -1,7 +1,6 @@
 "use client";
 
 import { Search } from "lucide-react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import SearchManufacturer from "./SearchManufacturer";
@@ -36,6 +35,7 @@ const SearchBar = () => {
       searchParams.delete("manufacturer");
     }
     const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
+  
     router.push(newPathName, { scroll: false });
   };
   return (

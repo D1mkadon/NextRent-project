@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CarCard from "./components/CarCard";
 import Image from "next/image";
 import SecondSlider from "./components/SecondSlider";
@@ -10,35 +10,33 @@ import HomePageFirstSection from "./components/HomePageFirstSection";
 import SearchBar from "./components/SearchBar";
 import { FilterProps, HomeProps } from "@/types/types";
 import axios from "axios";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
+gsap.registerPlugin(ScrollTrigger);
 export default function Home({ searchParams }: HomeProps) {
   const [cars, setCars] = useState([]);
 
-  useEffect(() => {
-    const getData = ({
-      manufacturer,
-      year,
-      model,
-      fuel,
-      limit,
-    }: FilterProps) => {
-      axios({
-        url: `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+  const getData = ({ manufacturer, year, model, fuel, limit }: FilterProps) => {
+    axios({
+      url: `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
 
-        method: "GET",
-        headers: {
-          "X-RapidAPI-Key":
-            "85624eb103msha1055faed589f15p18e942jsndd4a4cf7090d",
-          "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
-        },
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "85624eb103msha1055faed589f15p18e942jsndd4a4cf7090d",
+        "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
+      },
+    })
+      .then((res) => {
+        setCars(res.data);
+        console.log(res.data);
       })
-        .then((res) => {
-          setCars(res.data);
-          console.log(res.data);
-        })
-        .catch((err) => console.log(err));
-    };
+      .catch((err) => console.log(err));
+  };
 
+
+  useEffect(() => {
     getData({
       manufacturer: searchParams.manufacturer || "",
       year: searchParams.year || 2012,
@@ -47,6 +45,30 @@ export default function Home({ searchParams }: HomeProps) {
       model: searchParams.model || "",
     });
   }, [searchParams]);
+
+  // animations 
+  const elementRef = useRef(null);
+  useGSAP(
+    () => {
+      gsap.from(".carAnimate", {
+        scrollTrigger: {
+          trigger: ".AnimTrigger",
+          start: "-100% 100%",
+          markers: true,
+        },
+        y: 100,
+        opacity: 0,
+        ease: "power1.inOut",
+        delay: 1,
+        yoyo: true,
+        stagger: {
+          each: 0.2,
+        },
+      });
+    },
+    { scope: elementRef, dependencies: [searchParams] }
+  );
+   // animations ends
   return (
     <div>
       <HomePageFirstSection />
@@ -67,7 +89,10 @@ export default function Home({ searchParams }: HomeProps) {
       {/* 3rd section  */}
       <div className="Container mt-7 flex-auto flex flex-col justify-center items-center gap-6">
         <SearchBar />
-        <div className="flex flex-wrap items-start justify-center">
+        <div
+          ref={elementRef}
+          className="flex flex-wrap items-start justify-center AnimTrigger"
+        >
           {cars?.map((car, index) => <CarCard key={index} car={car} />)}
         </div>
       </div>
