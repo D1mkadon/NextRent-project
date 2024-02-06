@@ -13,8 +13,9 @@ const page = () => {
   const [loading, setLoading] = useState(true);
   const { user } = UserAuth();
   const profScope = useRef(null);
+
   useLayoutEffect(() => {
-    user && profScope.current
+    !loading && user && profScope.current
       ? gsap.from(".profileAnimations", {
           scrollTrigger: {
             trigger: profScope.current,

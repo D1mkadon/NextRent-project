@@ -59,3 +59,11 @@ export interface FilterProps {
 export interface HomeProps {
   searchParams: FilterProps;
 }
+export interface SearchProps {
+  setManufacturer: (manufacturer: string) => void;
+  setLimit: (Limit: number) => void;
+  setYear: (Year: number) => void;
+  setModel: (Model: string) => void;
+  model: string;
+  manufacturer: string;
+}

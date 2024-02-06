@@ -17,10 +17,15 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 export default function Home({ searchParams }: HomeProps) {
   const [cars, setCars] = useState([]);
+  const [manufacturer, setManufacturer] = useState("");
+  const [model, setModel] = useState("");
+  const [year, setYear] = useState(2012);
+  const [limit, setLimit] = useState(15);
+  const [loading, setLoading] = useState(true);
 
-  const getData = ({ manufacturer, year, model, fuel, limit }: FilterProps) => {
+  const getData = () => {
     axios({
-      url: `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+      url: `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}`,
 
       method: "GET",
       headers: {
@@ -30,45 +35,40 @@ export default function Home({ searchParams }: HomeProps) {
     })
       .then((res) => {
         setCars(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((err) => console.log(err));
   };
 
-
   useEffect(() => {
-    getData({
-      manufacturer: searchParams.manufacturer || "",
-      year: searchParams.year || 2012,
-      fuel: searchParams.fuel || "",
-      limit: searchParams.limit || 15,
-      model: searchParams.model || "",
-    });
-  }, [searchParams]);
+    setLoading(true);
+    getData();
+    setLoading(false);
+  }, [manufacturer, model]);
 
-  // animations 
   const elementRef = useRef(null);
   useGSAP(
     () => {
-      gsap.from(".carAnimate", {
-        scrollTrigger: {
-          trigger: ".AnimTrigger",
-          start: "-100% 100%",
-          markers: true,
-        },
-        y: 100,
-        opacity: 0,
-        ease: "power1.inOut",
-        delay: 1,
-        yoyo: true,
-        stagger: {
-          each: 0.2,
-        },
-      });
+      !cars.length
+        ? null
+        : gsap.from(".carAnimate", {
+            scrollTrigger: {
+              trigger: elementRef.current,
+              start: "-100% 100%",
+            },
+            y: 100,
+            opacity: 0,
+            ease: "power1.inOut",
+            delay: 1,
+            yoyo: true,
+            stagger: {
+              each: 0.2,
+            },
+          });
     },
-    { scope: elementRef, dependencies: [searchParams] }
+    { scope: elementRef, dependencies: [manufacturer] }
   );
-   // animations ends
+  // animations ends
   return (
     <div>
       <HomePageFirstSection />
@@ -87,14 +87,25 @@ export default function Home({ searchParams }: HomeProps) {
         <SecondSlider />
       </div>
       {/* 3rd section  */}
-      <div className="Container mt-7 flex-auto flex flex-col justify-center items-center gap-6">
-        <SearchBar />
-        <div
-          ref={elementRef}
-          className="flex flex-wrap items-start justify-center AnimTrigger"
-        >
-          {cars?.map((car, index) => <CarCard key={index} car={car} />)}
-        </div>
+      <div
+        ref={elementRef}
+        className="Container mt-7 flex-auto flex flex-col justify-center items-center gap-6"
+      >
+        <SearchBar
+          setManufacturer={setManufacturer}
+          setModel={setModel}
+          setYear={setYear}
+          setLimit={setLimit}
+          manufacturer={manufacturer}
+          model={model}
+        />
+        {loading ? (
+          <p> Loading... </p>
+        ) : (
+          <div className="flex flex-wrap items-start justify-center">
+            {cars?.map((car, index) => <CarCard key={index} car={car} />)}
+          </div>
+        )}
       </div>
       {/* 4th section  */}
     </div>

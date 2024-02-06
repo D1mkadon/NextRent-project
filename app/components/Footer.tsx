@@ -15,13 +15,13 @@ const Footer = () => {
             </Link>
             <Link
               className="text-gray-600/[0.9]  hover:text-white transition-all duration-500 capitalize"
-              href={"/work"}
+              href={"/"}
             >
               jobs
             </Link>
             <Link
               className="text-gray-600/[0.9] hover:text-white transition-all duration-500 capitalize"
-              href={"/for_the_record"}
+              href={"/"}
             >
               for the record
             </Link>
@@ -30,31 +30,31 @@ const Footer = () => {
             <h3 className="capitalize font-bold">Communities</h3>
             <Link
               className="text-gray-600/[0.9] hover:text-white transition-all duration-500 capitalize"
-              href={"/developers"}
+              href={"/"}
             >
               Developers
             </Link>
             <Link
               className="text-gray-600/[0.9] hover:text-white transition-all duration-500 capitalize"
-              href={"/investors"}
+              href={"/"}
             >
               Investors
             </Link>
             <Link
               className="text-gray-600/[0.9] hover:text-white transition-all duration-500 capitalize"
-              href={"/vendors"}
+              href={"/"}
             >
               Vendors
             </Link>
             <Link
               className="text-gray-600/[0.9] hover:text-white transition-all duration-500 capitalize"
-              href={"/sellers"}
+              href={"/"}
             >
               For Sellers
             </Link>
             <Link
               className="text-gray-600/[0.9] hover:text-white transition-all duration-500 capitalize"
-              href={"/advertising"}
+              href={"/"}
             >
               Advertising
             </Link>
@@ -63,13 +63,13 @@ const Footer = () => {
             <h3 className="capitalize font-bold">Useful links</h3>
             <Link
               className="text-gray-600/[0.9] hover:text-white transition-all duration-500 capitalize"
-              href={"/support"}
+              href={"/"}
             >
               Support
             </Link>
             <Link
               className="text-gray-600/[0.9] hover:text-white transition-all duration-500 capitalize"
-              href={"/mobile_app"}
+              href={"/"}
             >
               Free Mobile App
             </Link>
